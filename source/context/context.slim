@@ -1,0 +1,6 @@
+- unless context.nil? || context.empty?
+  - context.each do |section|
+    - if section._meta.content_type_id == 'contentLongText'
+      == partial "context/text", locals: {context: section}
+    - elsif section._meta.content_type_id == 'contentEmbed'
+      == partial "context/embed", locals: {context: section}

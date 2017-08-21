@@ -1,0 +1,17 @@
+.container
+  .row
+    h4
+      a*{href: "/#{trip.slug}.html"}
+        = "< Back to Trip"
+  .row
+    .col-lg-4
+      img*{src:"#{package.images.first.url}?h=180"}
+    .col-lg-8.col-md-10
+      h2
+        = package.name
+      h5
+        = "For $#{package.price}"
+  .row
+    h3
+      = "Description"
+    == partial "context/context", locals: {context: package.content}

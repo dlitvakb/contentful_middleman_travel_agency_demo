@@ -1,0 +1,7 @@
+.container
+  h2
+    = agency.name
+  == partial "context/context", locals: {context: agency.content}
+
+  - trips.each do |trip|
+    == partial "trips/partial", locals: {trip: trip}

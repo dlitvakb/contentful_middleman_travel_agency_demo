@@ -1,0 +1,6 @@
+.container
+  h1
+    = "Travel Demo"
+
+  - data.agency.trips.each do |_, trip|
+    == partial "trips/partial", locals: {trip: trip}

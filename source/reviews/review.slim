@@ -1,0 +1,9 @@
+h4
+  = "#{review.title}"
+  small
+    = " by #{review.reviewed_by}"
+- if review.subtitle
+  h5
+    = review.subtitle
+
+== partial "context/context", locals: {context: review.content}

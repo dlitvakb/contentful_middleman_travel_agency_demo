@@ -1,0 +1,268 @@
+{
+  "version": 3,
+  "contentTypes": [
+    {
+      "id": "agency",
+      "name": "Agency",
+      "displayField": "name",
+      "fields": [
+        {
+          "id": "name",
+          "name": "Name",
+          "type": "Symbol"
+        },
+        {
+          "id": "slug",
+          "name": "Slug",
+          "type": "Symbol"
+        },
+        {
+          "id": "content",
+          "name": "Content",
+          "type": "Array",
+          "items": {
+            "type": "Link",
+            "linkType": "Entry"
+          }
+        }
+      ]
+    },
+    {
+      "id": "contentEmbed",
+      "name": "Content [Embed]",
+      "displayField": "title",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Symbol"
+        },
+        {
+          "id": "embedTag",
+          "name": "Embed Tag",
+          "type": "Text"
+        },
+        {
+          "id": "embedUrl",
+          "name": "Embed URL",
+          "type": "Symbol"
+        }
+      ]
+    },
+    {
+      "id": "contentLongText",
+      "name": "Content [LongText]",
+      "displayField": "title",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Title - WebApp Reference",
+          "type": "Symbol"
+        },
+        {
+          "id": "text",
+          "name": "Text",
+          "type": "Text"
+        }
+      ]
+    },
+    {
+      "id": "destination",
+      "name": "Destination",
+      "displayField": "name",
+      "fields": [
+        {
+          "id": "name",
+          "name": "Name",
+          "type": "Symbol"
+        },
+        {
+          "id": "content",
+          "name": "Content",
+          "type": "Array",
+          "items": {
+            "type": "Link",
+            "linkType": "Entry"
+          }
+        },
+        {
+          "id": "coordinates",
+          "name": "Coordinates",
+          "type": "Location"
+        },
+        {
+          "id": "subDestinations",
+          "name": "Sub-Destinations",
+          "type": "Array",
+          "items": {
+            "type": "Link",
+            "linkType": "Entry"
+          }
+        },
+        {
+          "id": "topLevel",
+          "name": "Top Level",
+          "type": "Boolean"
+        },
+        {
+          "id": "slug",
+          "name": "Slug",
+          "type": "Symbol"
+        }
+      ]
+    },
+    {
+      "id": "package",
+      "name": "Package",
+      "displayField": "name",
+      "fields": [
+        {
+          "id": "name",
+          "name": "Name",
+          "type": "Symbol"
+        },
+        {
+          "id": "price",
+          "name": "Price",
+          "type": "Number"
+        },
+        {
+          "id": "content",
+          "name": "Content",
+          "type": "Array",
+          "items": {
+            "type": "Link",
+            "linkType": "Entry"
+          }
+        },
+        {
+          "id": "thumbnail",
+          "name": "Thumbnail",
+          "type": "Link",
+          "linkType": "Asset"
+        },
+        {
+          "id": "images",
+          "name": "Images",
+          "type": "Array",
+          "items": {
+            "type": "Link",
+            "linkType": "Asset"
+          }
+        },
+        {
+          "id": "default",
+          "name": "Default",
+          "type": "Boolean"
+        }
+      ]
+    },
+    {
+      "id": "trip",
+      "name": "Trip",
+      "displayField": "name",
+      "fields": [
+        {
+          "id": "name",
+          "name": "Name",
+          "type": "Symbol"
+        },
+        {
+          "id": "destination",
+          "name": "Destination",
+          "type": "Link",
+          "linkType": "Entry"
+        },
+        {
+          "id": "agency",
+          "name": "Agency",
+          "type": "Link",
+          "linkType": "Entry"
+        },
+        {
+          "id": "packages",
+          "name": "Packages",
+          "type": "Array",
+          "items": {
+            "type": "Link",
+            "linkType": "Entry"
+          }
+        },
+        {
+          "id": "content",
+          "name": "Content",
+          "type": "Array",
+          "items": {
+            "type": "Link",
+            "linkType": "Entry"
+          }
+        },
+        {
+          "id": "saleConditions",
+          "name": "Sale Conditions",
+          "type": "Text"
+        },
+        {
+          "id": "otherDetails",
+          "name": "Other Details",
+          "type": "Object"
+        },
+        {
+          "id": "slug",
+          "name": "Slug",
+          "type": "Symbol"
+        },
+        {
+          "id": "tags",
+          "name": "Tags",
+          "type": "Array",
+          "items": {
+            "type": "Symbol"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tripReview",
+      "name": "Trip Review",
+      "displayField": "title",
+      "fields": [
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "Symbol"
+        },
+        {
+          "id": "subtitle",
+          "name": "Subtitle",
+          "type": "Symbol"
+        },
+        {
+          "id": "reviewedBy",
+          "name": "Reviewed By",
+          "type": "Symbol"
+        },
+        {
+          "id": "content",
+          "name": "Content",
+          "type": "Array",
+          "items": {
+            "type": "Link",
+            "linkType": "Entry"
+          }
+        },
+        {
+          "id": "tripReviewed",
+          "name": "Trip Reviewed",
+          "type": "Link",
+          "linkType": "Entry"
+        }
+      ]
+    }
+  ],
+  "assets": [
+
+  ],
+  "entries": {
+  }
+}

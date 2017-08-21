@@ -1,0 +1,8 @@
+.container
+  h2
+    = destination.name
+  == partial "context/context", locals: {context: destination.content}
+  == partial "maps/map", locals: {destination: destination}
+
+  - destination_trips(destination).each do |_, trip|
+    == partial "trips/partial", locals: {trip: trip}

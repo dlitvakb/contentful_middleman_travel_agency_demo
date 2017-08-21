@@ -1,0 +1,76 @@
+.container
+  .row
+    p
+      - destination_tree.reverse.each_with_index do |sub_destination, index|
+        - unless index == 0
+          small
+            = " > "
+        a*{href: "/#{sub_destination.slug}.html"}
+          = sub_destination.name
+
+  .row
+    .col-lg-4
+      img*{src:"#{trip_default_large_image(trip)}?h=180"}
+    .col-lg-8.col-md-10
+      h4
+        = trip.name
+      h6
+        a*{href: "/#{trip.agency.slug}.html"}
+          = trip.agency.name
+      .row
+        - trip.packages.each do |package|
+          .col-md-2
+            img*{src: package.thumbnail.url}
+            p
+              a*{href: "/#{trip.slug}-#{package.id}.html"}
+                = package.name
+            p
+              = "$#{package.price}"
+
+      - if trip.sale_conditions
+        == Kramdown::Document.new(trip.sale_conditions).to_html
+
+  .row
+    h3
+      = "Trip Description"
+    == partial "context/context", locals: {context: trip.content}
+
+    - if trip.other_details
+      p
+        - trip.other_details.each do |key, value|
+            b
+              = key
+            = ": #{value}"
+            br
+
+  - unless related_trips_by_destination.nil? || related_trips_by_destination.empty?
+    .row
+      h3
+        = "Related Trips"
+      .row
+        - related_trips_by_destination.each do |related_trip|
+          .col-lg-2
+            a*{href: "/#{related_trip.slug}.html"}
+              img*{src: "#{trip_default_large_image(related_trip)}?h=120"}
+              h4
+                = related_trip.name
+
+  - unless related_trips_by_agency.nil? || related_trips_by_agency.empty?
+    .row
+      h3
+        = "Other Trips by #{trip.agency.name}"
+      .row
+        - related_trips_by_agency.each do |related_trip|
+          .col-lg-2
+            a*{href: "/#{related_trip.slug}.html"}
+              img*{src: "#{trip_default_large_image(related_trip)}?h=120"}
+              h4
+                = related_trip.name
+
+  - unless reviews.nil? || reviews.empty?
+    .row
+      h3
+        = "Reviews for this Trip"
+      - reviews.each do |review|
+        .row
+          == partial "reviews/review", locals: {review: review}
