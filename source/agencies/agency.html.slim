@@ -3,5 +3,5 @@
     = agency.name
   == partial "context/context", locals: {context: agency.content}
 
-  - trips.each do |trip|
+  - trips.each do |_, trip|
     == partial "trips/partial", locals: {trip: trip}

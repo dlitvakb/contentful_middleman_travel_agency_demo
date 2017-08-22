@@ -148,19 +148,31 @@ if data.key?('agency')
     data.agency.packages.each do |_, package|
       trip = package_trip(package)
       slug = "#{trip.slug}-#{package.id}"
-      proxy "/#{slug}.html", "/packages/package.html", locals: {package: package, trip: trip}, ignore: true
+      proxy "/#{slug}.html", "/packages/package.html", locals: {
+        package: package,
+        trip: trip
+      },
+      ignore: true
     end
   end
 
   if data.agency.key?('agencies')
     data.agency.agencies.each do |_, agency|
-      proxy "/#{agency.slug}.html", "/agencies/agency.html", locals: {agency: agency, trips: agency_trips(agency)}, ignore: true
+      proxy "/#{agency.slug}.html", "/agencies/agency.html", locals: {
+        agency: agency,
+        trips: agency_trips(agency)
+      },
+      ignore: true
     end
   end
 
   if data.agency.key?('destinations')
     data.agency.destinations.each do |_, destination|
-      proxy "/#{destination.slug}.html", "/destinations/destination.html", locals: {destination: destination, trips: destination_trips(destination)}, ignore: true
+      proxy "/#{destination.slug}.html", "/destinations/destination.html", locals: {
+        destination: destination,
+        trips: destination_trips(destination)
+      },
+      ignore: true
     end
   end
 end
